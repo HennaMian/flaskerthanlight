@@ -1,0 +1,265 @@
+<!-- {% extends "layout.html" %} -->
+<main role="main" class="container">
+  <div class="row">
+    <div class="col-sm-6">
+    	{% block content %}
+        <li class="list-group-item list-group-item-primary">
+            <h3>Current Region: {{ region }}</h3>
+        </li>
+      <div class="content-section">
+        <li class="list-group-item list-group-item-secondary">
+            <h3> Space Trader Region Page </h3>
+        </li>
+        <p class='text-muted'>
+          <ul class="list-group">
+            <li class="list-group-item list-group-item-info"> <h5>Game Information</h5>
+            	{% for g in game %}
+    			<p>
+    				Difficulty: {{ g.difficulty }}
+    			</p>
+    			{% endfor%}
+                <h5>Player Information</h5>
+    			{% for p in player %}
+    				<p>
+    					Name: {{ p.pname }}
+    					<br />
+    					Pilot Skill Points: {{ p.pilotskill }}
+    					<br />
+    					Fighter Skill Points: {{ p.fighterskill }}
+    					<br />
+    					Merchant Skill Points: {{ p.merchantskill }}
+    					<br />
+    					Engineer Skill Points: {{ p.engineerskill }}
+    					<br />
+    					Credits: {{ p.credits }}
+    					<br />
+    					Money: {{ p.money }}
+                        <br />
+                        Current Region: {{ p.curr_region }}
+    				</p>
+    			{% endfor %}
+                <h5>
+                    Ship Information
+                </h5>
+                {% for s in ship %}
+                    <p>
+                        Type: {{ s.stype }}
+                        <br />
+                        Fuel Capacity: {{ s.fuelcapacity }}
+                        <br />
+                        Cargo Space: {{ s.cargospace }}
+                        <br />
+                        Health: {{ s.health }}
+                    </p>
+                {% endfor %}
+    		</li>
+            <li class="list-group-item">
+                <h5>You can select any region you want to travel to</h5>
+            </li>
+            <li class="list-group-item list-group-item-dark">
+                <a class="nav-item">
+                    {{ regions[0].rname }}
+                    {{ regions[0].x_coor, regions[0].y_coor }}
+                    {{ regions[0].techlevel }}
+                    <br />
+                    Distance from Current Region: {{ distances[0] }}
+                    <br />
+                    Fuel Cost to get to this Region: {{ fuelcosts[0] }}
+                </a>
+            </li>
+            <li class="list-group-item list-group-item-dark">
+            	<a class="nav-item">
+                    {{ regions[1].rname }}
+                    {{ regions[1].x_coor, regions[1].y_coor }}
+                    {{ regions[1].techlevel }}
+                    <br />
+                    Distance from Current Region: {{ distances[1] }}
+                    <br />
+                    Fuel Cost to get to this Region: {{ fuelcosts[1] }}
+                </a>
+            </li>
+            <li class="list-group-item list-group-item-dark">
+            	<a class="nav-item">
+                    {{ regions[2].rname }}
+                    {{ regions[2].x_coor, regions[2].y_coor }}
+                    {{ regions[2].techlevel }}
+                    <br />
+                    Distance from Current Region: {{ distances[2] }}
+                    <br />
+                    Fuel Cost to get to this Region: {{ fuelcosts[2] }}
+                </a>
+            </li>
+            <li class="list-group-item list-group-item-dark">
+            	<a class="nav-item">
+                    {{ regions[3].rname }}
+                    {{ regions[3].x_coor, regions[3].y_coor }}
+                    {{ regions[3].techlevel }}
+                    <br />
+                    Distance from Current Region: {{ distances[3] }}
+                    <br />
+                    Fuel Cost to get to this Region: {{ fuelcosts[3] }}
+                </a>
+            </li>
+            <li class="list-group-item list-group-item-dark">
+            	<a class="nav-item">
+                    {{ regions[4].rname }}
+                    {{ regions[4].x_coor, regions[4].y_coor }}
+                    {{ regions[4].techlevel }}
+                    <br />
+                    Distance from Current Region: {{ distances[4] }}
+                    <br />
+                    Fuel Cost to get to this Region: {{ fuelcosts[4] }}
+                </a>
+            </li>
+            <li class="list-group-item list-group-item-dark">
+            	<a class="nav-item">
+                    {{ regions[5].rname }}
+                    {{ regions[5].x_coor, regions[5].y_coor}}
+                    {{ regions[5].techlevel }}
+                    <br />
+                    Distance from Current Region: {{ distances[5] }}
+                    <br />
+                    Fuel Cost to get to this Region: {{ fuelcosts[5] }}
+                </a>
+            </li>
+            <li class="list-group-item list-group-item-dark">
+            	<a class="nav-item">
+                    {{ regions[6].rname }}
+                    {{ regions[6].x_coor, regions[6].y_coor }}
+                    {{ regions[6].techlevel }}
+                    <br />
+                    Distance from Current Region: {{ distances[6] }}
+                    <br />
+                    Fuel Cost to get to this Region: {{ fuelcosts[6] }}
+                </a>
+            </li>
+            <li class="list-group-item list-group-item-dark">
+            	<a class="nav-item">
+                    {{ regions[7].rname }}
+                    {{ regions[7].x_coor, regions[7].y_coor }}
+                    {{ regions[7].techlevel }}
+                    <br />
+                    Distance from Current Region: {{ distances[7] }}
+                    <br />
+                    Fuel Cost to get to this Region: {{ fuelcosts[7] }}
+                </a>
+            </li>
+            <li class="list-group-item list-group-item-dark">
+            	<a class="nav-item">
+                    {{ regions[8].rname }}
+                    {{ regions[8].x_coor, regions[8].y_coor }}
+                    {{ regions[8].techlevel }}
+                    <br />
+                    Distance from Current Region: {{ distances[8] }}
+                    <br />
+                    Fuel Cost to get to this Region: {{ fuelcosts[8] }}
+                </a>
+            </li>
+            <li class="list-group-item list-group-item-dark">
+            	<a class="nav-item">
+                    {{ regions[9].rname }}
+                    {{ regions[9].x_coor, regions[9].y_coor }}
+                    {{ regions[9].techlevel }}
+                    <br />
+                    Distance from Current Region: {{ distances[9] }}
+                    <br />
+                    Fuel Cost to get to this Region: {{ fuelcosts[9] }}
+                </a>
+            </li>
+            <br />
+            <li class="list-group-item">
+                <h6>Select any Region you want to travel to</h6>
+                <form method="POST" action="{{ url_for('region') }}" style="display: inline">
+                  <input type="radio" value="{{regions[0].rname}}" name="regions"> {{regions[0].rname}} <br />
+                  <input type="radio" value="{{regions[1].rname}}" name="regions"> {{regions[1].rname}} <br />
+                  <input type="radio" value="{{regions[2].rname}}" name="regions"> {{regions[2].rname}} <br />
+                  <input type="radio" value="{{regions[3].rname}}" name="regions"> {{regions[3].rname}} <br />
+                  <input type="radio" value="{{regions[4].rname}}" name="regions"> {{regions[4].rname}} <br />
+                  <input type="radio" value="{{regions[5].rname}}" name="regions"> {{regions[5].rname}} <br />
+                  <input type="radio" value="{{regions[6].rname}}" name="regions"> {{regions[6].rname}} <br />
+                  <input type="radio" value="{{regions[7].rname}}" name="regions"> {{regions[7].rname}} <br />
+                  <input type="radio" value="{{regions[8].rname}}" name="regions"> {{regions[8].rname}} <br />
+                  <input type="radio" value="{{regions[9].rname}}" name="regions"> {{regions[9].rname}} <br />
+                  <br />
+                  <input type="submit" value="Travel" name="regions" class="btn btn-outline-info">
+                </form>
+            </li>
+            <li class="list-group-item">
+                <h6>Do you want to buy/sell anything?</h6>
+                <h6>If so, make sure you only buy/sell items available in this Region's Market</h6>
+                <form method="POST" action="{{ url_for('region') }}" style="display: inline">
+                    <input type="radio" name="buyorsell" id="buyorsell" value="Buy"> Buy <br />
+                    <input type="radio" name="buyorsell" id="buyorsell" value="Sell"> Sell <br />
+                    <br />
+                    <h6>What do you want to buy/sell?</h6>
+                    <input type="text" name="type" id="type"> <br />
+                    <br />
+                    <h6>How many units do you want to buy/sell?</h6>
+                    <input type="number" id="amount" name="amount"> <br />
+                    <br />
+                    <input type="submit" name="buysell" value="Submit" class="btn btn-outline-info">
+                </form>
+            </li>
+            <br />
+            <li class="list-group-item">
+                <h6>Do you want to refuel your ship?</h6>
+                <h6>If so, you can only refuel up to 100 fuel capacity</h6>
+                <form method="POST" action="{{ url_for('region') }}" style="display: inline">
+                    <h6>How much fuel do you want to have after refueling? (Up to 100)</h6>
+                    <input type="number" id="fuel" name="fuel" max=100> <br />
+                    <br />
+                    <input type="submit" name="fuel" value="Submit" class="btn btn-outline-info">
+                </form>
+            </li>
+            <br />
+            <li class="list-group-item">
+                <h6>Do you want to repair your ship?</h6>
+                <h6>If so, you can only refuel up to 100 health</h6>
+                <form method="POST" action="{{ url_for('region') }}" style="display: inline">
+                    <h6>How much health do you want to have after repairing? (Up to 100)</h6>
+                    <input type="number" id="repair" name="repair" max=100> <br />
+                    <br />
+                    <input type="submit" name="repair" value="Submit" class="btn btn-outline-info">
+                </form>
+            </li>
+          </ul>
+        </p>
+      </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <h6>Market Items & Quantity</h6>
+            {% for type in types %}
+            <li class="list-group-item list-group-item-success">
+                {{ type }}
+                {{ items[type] }}
+            </li>
+            {% endfor %}
+            <br />
+            <h6>Inventory</h6>
+            {% for type in types %}
+            <li class="list-group-item list-group-item-success">
+                {{ type }}
+                {{ inventory[type] }}
+            </li>
+            {% endfor %}
+            <br />
+            <h6>Prices Per Unit (Buying)</h6>
+            {% for type in types %}
+            <li class="list-group-item list-group-item-success">
+                {{ type }}
+                {{ buyprices[type] }}
+            </li>
+            {% endfor %}
+            <br />
+            <h6>Prices Per Unit (Selling)</h6>
+            {% for type in types %}
+            <li class="list-group-item list-group-item-success">
+                {{ type }}
+                {{ sellprices[type] }}
+            </li>
+            {% endfor %}
+        </div>
+    </div>
+  {% endblock content %}
+</main>

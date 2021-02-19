@@ -1,0 +1,108 @@
+{% extends "layout.html" %}
+{% block content %}
+	<h1>Start New Game</h1>
+	<div class="content-section">
+		<form method="POST" action="">
+			{{ form.hidden_tag() }}
+			<fieldset class="form-group">
+				<legend class="border-bottom mb-4">Enter Player Information</legend>
+				<div class="form-group">
+					{{ form.name.label(class="form-control-label") }}
+
+					{% if form.name.errors %}
+						{{ form.name(class="form-control form-control-lg is-invalid") }}
+						<div class="invalid-feedback">
+							{% for error in form.name.errors %}
+								<span>{{ error }}</span>
+							{% endfor %}
+						</div>
+					{% else %}
+						{{ form.name(class="form-control form-control-lg") }}
+					{% endif %}
+					
+				</div>
+				<div class="form-check">
+					{{ form.difficulty.label(class="form-check-input", for="defaultCheck1") }}
+					<br />
+					{% if form.difficulty.errors %}
+						{{ form.difficulty(class="form-control form-control-lg is-invalid") }}
+						<div class="invalid-feedback">
+							{% for error in form.difficulty.errors %}
+								<span>{{ error }}</span>
+							{% endfor %}
+						</div>
+					{% else %}
+						{{ form.difficulty(class="form-check-input", type="checkbox") }}
+					{% endif %}
+				</div>
+				<br />
+				<br />
+				<br />
+				<br />
+				<br />
+				<p>If you chose Easy, you can distribute up to 16 skill points among the four different skills.</p>
+				<p>If you chose Medium, you can distribute up to 12 skill points.</p>
+				<p>And if you chose Hard, you can distribute up to 8 skill points.</p>
+				<p>You must allocate at least one point to each skill.</p>
+				<div class="form-group">
+					{{ form.pilotskillpoints.label(class="form-control-label") }}
+					{% if form.pilotskillpoints.errors %}
+						{{ form.pilotskillpoints(class="form-control form-control-lg is-invalid") }}
+						<div class="invalid-feedback">
+							{% for error in form.pilotskillpoints.errors %}
+								<span>{{ error }}</span>
+							{% endfor %}
+						</div>
+					{% else %}
+						{{ form.pilotskillpoints(class="form-control form-control-lg") }}
+					{% endif %}
+				</div>
+				<br />
+				<div class="form-group">
+					{{ form.fighterskillpoints.label(class="form-control-label") }}
+					{% if form.fighterskillpoints.errors %}
+						{{ form.fighterskillpoints(class="form-control form-control-lg is-invalid") }}
+						<div class="invalid-feedback">
+							{% for error in form.fighterskillpoints.errors %}
+								<span>{{ error }}</span>
+							{% endfor %}
+						</div>
+					{% else %}
+						{{ form.fighterskillpoints(class="form-control form-control-lg") }}
+					{% endif %}
+				</div>
+				<br />
+				<div class="form-group">
+					{{ form.merchantskillpoints.label(class="form-control-label") }}
+					{% if form.merchantskillpoints.errors %}
+						{{ form.merchantskillpoints(class="form-control form-control-lg is-invalid") }}
+						<div class="invalid-feedback">
+							{% for error in form.merchantskillpoints.errors %}
+								<span>{{ error }}</span>
+							{% endfor %}
+						</div>
+					{% else %}
+						{{ form.merchantskillpoints(class="form-control form-control-lg") }}
+					{% endif %}
+				</div>
+				<br />
+				<div class="form-group">
+					{{ form.engineerskillpoints.label(class="form-control-label") }}
+					{% if form.engineerskillpoints.errors %}
+						{{ form.engineerskillpoints(class="form-control form-control-lg is-invalid") }}
+						<div class="invalid-feedback">
+							{% for error in form.engineerskillpoints.errors %}
+								<span>{{ error }}</span>
+							{% endfor %}
+						</div>
+					{% else %}
+						{{ form.engineerskillpoints(class="form-control form-control-lg") }}
+					{% endif %}
+				</div>
+			</fieldset>
+			<div class="form-group">
+				{{ form.submit(class="btn btn-outline-info")}}
+			</div>
+		</form>
+	</div>
+{% endblock content %}

@@ -1,0 +1,20 @@
+{% extends "layout.html" %}
+{% block content %}
+	<h1>Display</h1>
+	<br />
+  <h2>Name: {{name}} </h2>
+  <br />
+  <h2>Difficulty: {{difficulty}} </h2>
+  <br/>
+  <h3>Pilot Skill Points: {{pskillpoints}} </h3>
+  <br/>
+  <h3>Fighter Skill Points: {{fskillpoints}} </h3>
+  <br/>
+  <h3>Merchant Skill Points: {{mskillpoints}} </h3>
+  <br/>
+  <h3>Engineer Skill Points: {{eskillpoints}} </h3>
+  <br/>
+  <h3>Starting Credits: {{startcredits}} </h3>
+  <br/>
+  <a class="btn btn-outline-info" href="/game">Begin Game</a>
+{% endblock content %}

@@ -1,0 +1,32 @@
+{% extends "layout.html" %}
+{% block content %}
+
+	<h2> NPC Type: {{ ctype }} </h2>
+	<h3> The trader wants to trade you {{ amount }} {{ itemtype }} for {{ price }} credits </h3>
+
+	<img src="https://vignette.wikia.nocookie.net/castlevania/images/d/de/HoD_Merchant.jpg/revision/latest?cb=20090315022448" width="200" height="300">
+	<br />
+
+	<main class="container">
+		<div class="row">
+			<div class="col-sm-6">
+				<div class="content-section">
+					<li class="list-group-item list-group-item-secondary">
+						<h4>What do you want to do?</h4>
+					</li>
+					<li class="list-group-item">
+						<form method="POST" style="display: inline">
+		                  <input type="radio" value="Buy" name="decide"> Buy the items <br />
+		                  <input type="radio" value="Ignore" name="decide"> Ignore the trader <br />
+		                  <input type="radio" value="Rob" name="decide"> Rob the trader <br />
+		                  <input type="radio" value="Negotiate" name="decide"> Negotiate for better price <br />
+		                  <br />
+		                  <input type="submit" value="Submit" name="decide" class="btn btn-outline-info">
+		                </form>
+					</li>
+				</div>
+			</div>
+		</div>
+	</main>
+
+{% endblock content %}
